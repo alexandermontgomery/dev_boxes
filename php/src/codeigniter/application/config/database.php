@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = FALSE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'interview';
-$db['default']['password'] = 'interview';
-$db['default']['database'] = 'interview';
+$db['default']['username'] = 'dev';
+$db['default']['password'] = 'dev';
+$db['default']['database'] = 'dev';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

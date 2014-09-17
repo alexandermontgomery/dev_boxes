@@ -1,6 +1,6 @@
 # Project Overview
 
-In order to effectively assess applicants in a variety of languages, we needed a fast way to setup technology stacks ready to be developed on. This project aims to do just that. There are three directories each containing a Vagrantfile that will provision a box ready to be developed on in that language. After setting Vagrant and Virtualbox up (outlined below) you can read more about setting up your chosen environment in the README's specific to that environment. Those README's also describe a bit about the frameworks used in the environment
+There are three directories each containing a Vagrantfile that will provision a box ready to be developed on in that language. After setting Vagrant and Virtualbox up (outlined below) you can read more about setting up your chosen environment in the README's specific to that environment. Those README's also describe a bit about the frameworks used in the environment
 
 * [The PHP Box](php/)
 * [The Ruby Box](ruby/)
@@ -58,8 +58,8 @@ Each flavor of virtualbox has MySQL installed. To connect from the host machine 
 
 * **Host**: 127.0.0.1 (e.g. localhost to your workstation)
 * **Port**: 3310 
-* **Username**: interview
-* **Password**: interview
+* **Username**: dev
+* **Password**: dev
 
 
  
