@@ -4,8 +4,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "CentOS-6.5-x86_64-puppet-chef"
   config.vm.box_url = "http://279020f5c10bc4f81e01-96f7502f2b1256957419f890585e776c.r12.cf2.rackcdn.com/CentOS-6.5-x86_64-puppet-chef.box"
   config.vm.hostname = "dev-go"
-  config.vm.network :forwarded_port, guest:8080, host: 8091 # Python Web Apps
-  config.vm.network :forwarded_port, guest:3306, host: 3310 # MySQL
+  config.vm.network :forwarded_port, guest:8080, host: 8091 # GO Web Apps
 
   config.vm.provider :virtualbox do |vb|
   	vb.customize ["modifyvm", :id, "--memory", "2048"]
@@ -15,23 +14,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "../cookbooks"
-  end
-
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "../cookbooks"
 
     chef.add_recipe "basics"
-    chef.add_recipe "mysql"
-    chef.add_recipe "python::source"
-    chef.add_recipe "python::pip"
-    chef.add_recipe "python::virtualenv"
-    chef.add_recipe "python_pip_mods"
-
-    chef.json = {
-      'python' => {
-         'version' => '2.7.5',
-         'make_options' => %W{altinstall}
-      }
-    }
+    chef.add_recipe "go"
   end
 end
