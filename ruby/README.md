@@ -12,6 +12,6 @@ Sinatra is an extremely simple framework that helps you create a basic web appli
 You can start the application by ssh'ing into the virtualbox and navigating to the main ruby script already prepared for you
 
     cd /vagrant/src
-    ruby interview.rb
+    ruby app.rb
 
 You can view the running Sinatra application on your host machine by browsing to [http://localhost:8092/](https://localhost:8092/)

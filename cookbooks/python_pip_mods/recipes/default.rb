@@ -36,5 +36,5 @@ bash 'iptables open port 8080' do
     /sbin/service iptables save
   EOH
   action :run
-  not_if "/sbin/iptables -L -v -n | /bin/grep \"tcp dpt:8000\""
+  not_if "/sbin/iptables -L -v -n | /bin/grep \"tcp dpt:8080\""
 end

@@ -22,3 +22,11 @@ end
 package "zlib-devel" do
   action :install
 end
+
+package "strace" do
+  action :install
+end
+
+package "lsof" do
+  action :install
+end

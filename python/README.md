@@ -12,6 +12,6 @@ You can start the application by ssh'ing into the virtualbox and navigating to t
 
     cd /vagrant/src
     source bin/activate
-    python interview.py
+    python app.py
 
 You can view the running Flask application on your host machine by browsing to [http://localhost:8091/](http://localhost:8091/)
