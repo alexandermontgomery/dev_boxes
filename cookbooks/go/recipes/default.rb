@@ -9,7 +9,15 @@ package "golang" do
   action :install
 end
 
-# make sure that iptables allows for input/output on the port django will run on port 8080
+# Thanks you emil2k - https://github.com/emil2k/chef-go
+# Create profile plugin file to export paths
+template '/etc/profile.d/go.sh' do 
+	source "go.sh.erb"
+	mode 0644
+	action :create
+end
+
+# make sure that iptables allows for input/output on the port go will run on port 8080
 bash 'iptables open port 8080' do
   code <<-"EOH"
     /sbin/iptables -I INPUT -p tcp --dport 8080 -m state --state NEW,ESTABLISHED -j ACCEPT
