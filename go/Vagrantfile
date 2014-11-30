@@ -4,7 +4,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "CentOS-6.5-x86_64-puppet-chef"
   config.vm.box_url = "http://279020f5c10bc4f81e01-96f7502f2b1256957419f890585e776c.r12.cf2.rackcdn.com/CentOS-6.5-x86_64-puppet-chef.box"
   config.vm.hostname = "dev-go"
-  config.vm.network :forwarded_port, guest:8080, host:8091 # GO Web Apps
+  config.vm.network :forwarded_port, guest:80, host:8091
   config.vm.network :forwarded_port, guest:27017, host:27018
 
   config.vm.provider :virtualbox do |vb|
@@ -19,5 +19,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "basics"
     chef.add_recipe "go"
     chef.add_recipe "mongo_simple"
+    chef.add_recipe "nginx_simple"
   end
 end
